@@ -1,0 +1,574 @@
+.hero-header {
+  background: linear-gradient(rgba(16, 17, 19, 0.9), rgba(15, 23, 43, .9)), url(../img/bg-hero.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hero-header img {
+  animation: imgRotate 50s linear infinite;
+}
+
+@keyframes imgRotate { 
+  100% { 
+      transform: rotate(360deg); 
+  } 
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  color: rgba(255, 255, 255, .5);
+}
+
+
+/* Make the hero container full height of the viewport and set background image */
+/* Make the hero container full height of the viewport and set background image */
+/* Make the hero container full height of the viewport and set background image */
+.hero-container {
+  position: relative; /* Set position to relative to position the overlay correctly */
+  background-image: url('img/hero.png'); /* Path to your background image */
+  background-size: cover; /* Ensure the image covers the whole area */
+  background-position: center center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white; /* Text color */
+  margin-bottom: 0; /* Remove bottom margin */
+}
+
+/* Overlay: dark semi-transparent layer on top of the background image */
+.hero-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Black color with 50% opacity */
+  z-index: 1; /* Make sure the overlay is above the image but below the content */
+}
+
+/* Ensure the content is above the overlay */
+.hero-container .container {
+  position: relative; /* Set position to relative to ensure it's above the overlay */
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.hero-container h1 {
+  font-size: 3rem; /* Large font size for the heading */
+  font-weight: 700;
+  line-height: 1.3;
+  color: #fff;
+}
+
+.hero-container p {
+  font-size: 1.125rem; /* Standard paragraph font size */
+  color: #fff;
+}
+
+.hero-container .btn {
+  background-color: #007bff; /* Primary button color */
+  color: white;
+  padding: 1rem 3rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.hero-container .btn:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Animation Classes */
+.animated {
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+}
+
+.slideInLeft {
+  animation-name: slideInLeft;
+}
+
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+/* App.css */
+
+/* Service Item Styles */
+/* App.css */
+
+/* Define the primary and light color variables */
+:root {
+  --primary: #007bff;  /* Change to your preferred primary color */
+  --light: #ffffff;    /* Change to your preferred light color */
+}
+
+/* Service Item Styles */
+.section-title {
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::before {
+  position: absolute;
+  content: "";
+  width: 45px;
+  height: 2px;
+  top: 50%;
+  left: -55px;
+  margin-top: -1px;
+  background: var(--primary);
+}
+
+.section-title::after {
+  position: absolute;
+  content: "";
+  width: 45px;
+  height: 2px;
+  top: 50%;
+  right: -55px;
+  margin-top: -1px;
+  background: var(--primary);
+}
+
+.section-title.text-start::before,
+.section-title.text-end::after {
+  display: none;
+}
+
+
+/*** Service ***/
+.service-item {
+  box-shadow: 0 0 45px rgba(0, 0, 0, .08);
+  transition: .5s;
+}
+
+
+.service-item {
+  box-shadow: 0 0 45px rgba(0, 0, 0, 0.08);
+  transition: 0.5s;
+  opacity: 0;
+  animation: fadeInUp 0.5s forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px); /* Starts a bit lower and fades in */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* Ends in normal position */
+  }
+}
+
+.service-item .left-margin {
+  margin-left: 20px;
+  padding-left: 20px; /* Set your desired margin */
+}
+/* Hover Effect */
+.service-item:hover {
+  background: var(--primary);  /* Background color on hover */
+}
+/* Transition for all elements inside service item */
+.service-item * {
+  transition: 0.5s;
+}
+
+/* Hover state for all elements inside the service item */
+.service-item:hover * {
+  color: var(--light) !important;  /* Change text color on hover */
+}
+/* About.css */
+
+/* Image Styles */
+img,
+svg {
+  vertical-align: middle;
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+.w-100 {
+  width: 100% !important;
+}
+
+.rounded {
+  border-radius: 2px !important;
+}
+
+.zoomIn {
+  animation-name: zoomIn;
+}
+
+.text-end {
+  text-align: right !important;
+}
+
+/* Gutter Spacing */
+.g-3, .gy-3 {
+  --bs-gutter-y: 1rem;
+}
+
+.g-3, .gx-3 {
+  --bs-gutter-x: 1rem;
+}
+
+.row {
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(var(--bs-gutter-y) * -1);
+  margin-right: calc(var(--bs-gutter-x) / -2);
+  margin-left: calc(var(--bs-gutter-x) / -2);
+}
+
+/* WOW.js Animations */
+.wow {
+  visibility: hidden;
+}
+
+.wow.zoomIn {
+  visibility: visible;
+  animation-name: zoomIn;
+}
+
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Additional Styling for Section */
+.container-xxl {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.section-title {
+  font-family: 'Arial', sans-serif;
+  font-size: 1.5rem;
+}
+
+.text-primary {
+  color: #007bff;
+}
+
+.fw-normal {
+  font-weight: normal;
+}
+
+/* Button Styles */
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.nav-pills .nav-item .active {
+  border-bottom: 2px solid var(--primary);
+}
+.container-xxl {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.nav-item {
+  margin-bottom: 15px;
+}
+
+.nav-pills .nav-link {
+  color: #007bff;
+}
+
+.nav-pills .nav-link.active {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+.border-bottom {
+  border-bottom: 1px solid #ddd;
+}
+
+.ps-4 {
+  padding-left: 1.5rem;
+}
+
+.fst-italic {
+  font-style: italic;
+}
+
+.text-primary {
+  color: #007bff;
+}
+
+.text-body {
+  color: #6c757d;
+}
+
+.mt-n1 {
+  margin-top: -0.25rem;
+}
+
+.mb-0 {
+  margin-bottom: 0;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.ps-3 {
+  padding-left: 1rem;
+}
+
+.pb-3 {
+  padding-bottom: 1rem;
+}
+
+.footer .btn.btn-social {
+  margin-right: 5px;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--light);
+  border: 1px solid #FFFFFF;
+  border-radius: 35px;
+  transition: .3s;
+}
+
+.footer .btn.btn-social:hover {
+  color: var(--primary);
+}
+
+.footer .btn.btn-link {
+  display: block;
+  margin-bottom: 5px;
+  padding: 0;
+  text-align: left;
+  color: #FFFFFF;
+  font-size: 15px;
+  font-weight: normal;
+  text-transform: capitalize;
+  transition: .3s;
+}
+
+.footer .btn.btn-link::before {
+  position: relative;
+  content: "\f105";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  margin-right: 10px;
+}
+
+.footer .btn.btn-link:hover {
+  letter-spacing: 1px;
+  box-shadow: none;
+}
+
+.footer .copyright {
+  padding: 25px 0;
+  font-size: 15px;
+  border-top: 1px solid rgba(256, 256, 256, .1);
+}
+
+.footer .copyright a {
+  color: var(--light);
+}
+
+.footer .footer-menu a {
+  margin-right: 15px;
+  padding-right: 15px;
+  border-right: 1px solid rgba(255, 255, 255, .1);
+}
+
+.footer .footer-menu a:last-child {
+  margin-right: 0;
+  padding-right: 0;
+  border-right: none;
+}
+
+
+.video {
+  position: relative;
+  height: 100%;
+  min-height: 500px;
+  background: linear-gradient(rgba(15, 23, 43, .1), rgba(15, 23, 43, .1)), url(../img/video.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.video .btn-play {
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  box-sizing: content-box;
+  display: block;
+  width: 32px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  padding: 18px 20px 18px 28px;
+}
+
+.video .btn-play:before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  display: block;
+  width: 100px;
+  height: 100px;
+  background: var(--primary);
+  border-radius: 50%;
+  animation: pulse-border 1500ms ease-out infinite;
+}
+
+.video .btn-play:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  display: block;
+  width: 100px;
+  height: 100px;
+  background: var(--primary);
+  border-radius: 50%;
+  transition: all 200ms;
+}
+
+.video .btn-play img {
+  position: relative;
+  z-index: 3;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+}
+
+.video .btn-play span {
+  display: block;
+  position: relative;
+  z-index: 3;
+  width: 0;
+  height: 0;
+  border-left: 32px solid var(--dark);
+  border-top: 22px solid transparent;
+  border-bottom: 22px solid transparent;
+}
+
+@keyframes pulse-border {
+  0% {
+      transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
+      opacity: 1;
+  }
+
+  100% {
+      transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.5);
+      opacity: 0;
+  }
+}
+
+#videoModal {
+  z-index: 99999;
+}
+
+#videoModal .modal-dialog {
+  position: relative;
+  max-width: 800px;
+  margin: 60px auto 0 auto;
+}
+
+#videoModal .modal-body {
+  position: relative;
+  padding: 0px;
+}
+
+#videoModal .close {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  right: 0px;
+  top: -30px;
+  z-index: 999;
+  font-size: 30px;
+  font-weight: normal;
+  color: #FFFFFF;
+  background: #000000;
+  opacity: 1;
+}
+
+.team-item {
+  box-shadow: 0 0 45px rgba(0, 0, 0, .08);
+  height: calc(100% - 38px);
+  transition: .5s;
+}
+
+.team-item img {
+  transition: .5s;
+}
+
+.team-item:hover img {
+  transform: scale(1.1);
+}
+
+.team-item:hover {
+  height: 100%;
+}
+
+.team-item .btn {
+  border-radius: 38px 38px 0 0;
+}
+
+
+
